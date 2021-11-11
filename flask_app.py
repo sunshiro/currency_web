@@ -2,6 +2,8 @@
 # A very simple Flask Hello World app for you to get started with...
 
 from flask import Flask
+from datetime import date
+
 
 app = Flask(__name__)
 
@@ -9,10 +11,7 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello'
 
-@app.route('/aaaa')
-def hello_world_aaaa():
-    return 'the path is aaaa'
+@app.route('/today')
+def display_today_date():
+    return str(date.today())
 
-@app.route('/aaaa/bbbb')
-def hello_world_aaaa_bbbb():
-    return 'the path is aaaa/bbbb'
